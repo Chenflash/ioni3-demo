@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>  'HOME.TITLE' </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3> 'HOME.LATITUDE' {{locationTracker.lat}}</h3>
+  <h3>'HOME.LONGITUDE'  {{locationTracker.lng}}</h3>
+
+  <button ion-button full primary (click)="start()">Start Tracking</button>
+  <button ion-button full primary (click)="stop()">Stop Tracking</button>
+  <button ion-button full primary (click)="llenarBase()">Llenar base de datos </button>
+  <button ion-button full primary (click)="vaciarBase()">Vaciar base de datos </button>
+</ion-content>
