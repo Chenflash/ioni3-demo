@@ -5,10 +5,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
+
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {AboutPage} from "../pages/about/about";
 import {ListaDatabasePage} from "../pages/lista-database/lista-database";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +27,7 @@ export class MyApp {
   constructor(public platform: Platform,
                       public statusBar: StatusBar,
                       public splashScreen: SplashScreen,
-                             ) {
+                      public  translate: TranslateService       ) {
 
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -33,6 +35,10 @@ export class MyApp {
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      translate.setDefaultLang('es');
+      // the lang to use, if the lang isn't available, it will use the current loader to get them
+      translate.use('es');
 
     });
 

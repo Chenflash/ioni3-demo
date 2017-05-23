@@ -31,5 +31,8 @@ www/
 $RECYCLE.BIN/
 
 .DS_Store
+*.DS_Store
+*.log
+*.swp
 Thumbs.db
 UserInterfaceState.xcuserstate

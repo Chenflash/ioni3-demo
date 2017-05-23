@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Logger} from "angular2-logger/core";
-import { ENV } from '@app/config'
+//import {Logger} from "angular2-logger/core";
+//
 
 /*
   Generated class for the LoggerService provider.
@@ -11,7 +11,7 @@ import { ENV } from '@app/config'
 */
 @Injectable()
 export class LoggerService {
-
+/*
   public log: Logger;
 
   constructor(public logger: Logger) {
@@ -38,5 +38,5 @@ export class LoggerService {
     }
     console.log("Log level is ", this.log.level);
   }
-
+*/
 }

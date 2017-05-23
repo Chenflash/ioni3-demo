@@ -1,0 +1,13 @@
+{
+  "HOME": {
+    "SELECT":"seleccion",
+
+    "TRACK_START":"empezar GPS",
+    "TRACK_STOP":"terminar GPS",
+    "TITLE": " CASA ESPAÑOL",
+    "LONGITUDE": "LONGITUD ES",
+    "LATITUDE": "LATITUD ES",
+    "DB_FILL":"llenar database",
+    "DB_ERASE":"vaciar database"
+  }
+}

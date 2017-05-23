@@ -1,0 +1,14 @@
+{
+  "HOME": {
+      "SELECT":"select",
+      "TRACK_START":"start tracking GPS",
+      "TRACK_STOP":"stop tracking GPS",
+      "TITLE": "TRANSLATE HOME",
+      "LONGITUDE": "LONGITUDE",
+      "LATITUDE": "LATITUDE",
+    "DB_FILL":"Fill database",
+    "DB_ERASE":"Erase database"
+
+
+  }
+}

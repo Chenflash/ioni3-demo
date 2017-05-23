@@ -3,7 +3,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { ENV } from '@app/config'
 import {Persona} from "../../models/Personas";
-import {LoggerService} from "../logs-service/logger-service";
+//import {LoggerService} from "../logs-service/logger-service";
+//import {LoggerService} from "../logs-service/logger-service";
 import {Direccion} from "../../models/Direccion";
 
 /*
@@ -14,12 +15,12 @@ import {Direccion} from "../../models/Direccion";
 */
 @Injectable()
 export class PersonaService {
-  public data: any
+  public data: any;
   public personas:  Array<Persona>;
 
 
 
-  constructor(public http: Http, private logger: LoggerService) {
+  constructor(public http: Http) {
       this.personas = new Array<Persona>();
   }
 
@@ -43,7 +44,7 @@ export class PersonaService {
           console.log("data puro:"+data.results);
           this.data = data;
 
-          this.logger.log.debug("El resultado de: "+data.results);
+         /// this.logger.log.debug("El resultado de: "+data.results);
           for (let men of this.data.results) // for acts as a foreach
           {
             this.personas.push(new Persona(

@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpModule } from '@angular/http';
+import { HttpModule,Http   } from '@angular/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 import { MyApp } from './app.component';
@@ -17,8 +19,13 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 
 
+
 import { IonicStorageModule } from '@ionic/storage';
 
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
 
 
 @NgModule({
@@ -33,7 +40,14 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
 
   ],
   bootstrap: [IonicApp],
@@ -51,7 +65,6 @@ import { IonicStorageModule } from '@ionic/storage';
     Geolocation,
     StatusBar,
     SplashScreen,
-
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

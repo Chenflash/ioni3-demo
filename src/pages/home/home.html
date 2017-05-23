@@ -3,17 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>  'HOME.TITLE' </ion-title>
+    <ion-title>  {{'HOME.TITLE'| translate}} </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <h3> 'HOME.LATITUDE' {{locationTracker.lat}}</h3>
-  <h3>'HOME.LONGITUDE'  {{locationTracker.lng}}</h3>
+  <h3> {{'HOME.LATITUDE'| translate }}: {{locationTracker.lat}}</h3>
+  <h3>{{'HOME.LONGITUDE'| translate }}:  {{locationTracker.lng}}</h3>
 
-  <button ion-button full primary (click)="start()">Start Tracking</button>
-  <button ion-button full primary (click)="stop()">Stop Tracking</button>
-  <button ion-button full primary (click)="llenarBase()">Llenar base de datos </button>
-  <button ion-button full primary (click)="vaciarBase()">Vaciar base de datos </button>
+  <label>
+    {{ 'HOME.SELECT' | translate }}
+    <select #langSelect (change)="translate.use(langSelect.value)">
+      <option *ngFor="let lang of langs" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
+  </label>
+
+
+
+  <button ion-button full primary (click)="start()">{{ 'HOME.TRACK_START' | translate}}</button>
+  <button ion-button full primary (click)="stop()">{{ 'HOME.TRACK_STOP' |translate}}</button>
+  <button ion-button full primary (click)="llenarBase()">{{'HOME.DB_FILL' | translate}} </button>
+  <button ion-button full primary (click)="vaciarBase()">{{'HOME.DB_ERASE'| translate}} </button>
 </ion-content>
