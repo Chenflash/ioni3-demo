@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LocationTracker } from '../../providers/location-tracker/location-tracker';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-home',
@@ -18,8 +18,7 @@ export class HomePage {
               public locationTracker: LocationTracker,
               public translate: TranslateService,
               private camera: Camera,
-             ) {
-  }
+             ) { }
 
   start(){
     //this.logger.log.debug("Start Tracking");
@@ -45,7 +44,8 @@ export class HomePage {
     quality: 100,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
+    mediaType: this.camera.MediaType.PICTURE,
+    saveToPhotoAlbum: true
     } 
 
     this.camera.getPicture(options).then((imageData) => {

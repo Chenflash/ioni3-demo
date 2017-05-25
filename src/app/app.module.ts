@@ -8,9 +8,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import { AboutPage } from "../pages/about/about";
+import { ContactPage }  from '../pages/contact/contact';
+import { WebServicePage } from '../pages/web-service/web-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,10 +30,13 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    ContactPage,
+    WebServicePage
   ],
   imports: [
     BrowserModule,
@@ -49,10 +55,13 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    ContactPage,
+    WebServicePage
   ],
   providers: [
     Storage,
