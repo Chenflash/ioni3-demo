@@ -3,9 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
-
-
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {AboutPage} from "../pages/about/about";
@@ -42,7 +39,6 @@ export class MyApp {
 
     });
 
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
@@ -51,11 +47,7 @@ export class MyApp {
       { title: 'About', component: AboutPage }
     ];
 
-
-
   }
-
-
 
   openPage(page) {
     // Reset the content nav to have just this page

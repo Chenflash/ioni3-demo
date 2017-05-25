@@ -8,6 +8,7 @@
     "LONGITUDE": "LONGITUD ES",
     "LATITUDE": "LATITUD ES",
     "DB_FILL":"llenar database",
-    "DB_ERASE":"vaciar database"
+    "DB_ERASE":"vaciar database",
+    "TAKE_PHOTO": "Tomar foto"
   }
 }
