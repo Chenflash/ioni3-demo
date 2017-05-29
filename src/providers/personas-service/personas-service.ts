@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { ENV } from '@app/config'
-import {Persona} from "../../models/Personas";
+import { Persona } from "../../models/Personas";
 //import {LoggerService} from "../logs-service/logger-service";
 //import {LoggerService} from "../logs-service/logger-service";
-import {Direccion} from "../../models/Direccion";
+import { Direccion } from "../../models/Direccion";
 
 /*
   Generated class for the MenuService provider.
@@ -17,8 +17,6 @@ import {Direccion} from "../../models/Direccion";
 export class PersonaService {
   public data: any;
   public personas:  Array<Persona>;
-
-
 
   constructor(public http: Http) {
       this.personas = new Array<Persona>();

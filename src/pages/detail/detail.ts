@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TianguisServiceProvider } from '../../providers/tianguis-service/tianguis-service';
 
 /**
  * Generated class for the DetailPage page.
@@ -10,15 +11,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-detail',
+  providers: [ TianguisServiceProvider ],
   templateUrl: 'detail.html',
 })
 export class DetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public tianguisService: TianguisServiceProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+    this.tianguisService.postRequest()
+    .then(data => {
+      console.log("Data: " + data);
+    });
   }
 
 }

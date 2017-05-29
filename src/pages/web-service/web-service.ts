@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -14,11 +15,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WebServicePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+   public http: Http) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WebServicePage');
+  postRequest() {
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
+    let options = new RequestOptions({ headers: headers });
+ 
+    let postParams = {
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }
+    
+    this.http.post("http://jsonplaceholder.typicode.com/posts", postParams, options)
+      .subscribe(data => {
+        console.log(data['_body']);
+        console.log(data);
+       }, error => {
+        console.log(error);// Error getting the data
+      });
   }
 
 }

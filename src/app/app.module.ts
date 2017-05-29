@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpModule,Http   } from '@angular/http';
+import { HttpModule, Http, JsonpModule } from '@angular/http';
 import { Camera } from '@ionic-native/camera';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -22,6 +22,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { TianguisServiceProvider } from '../providers/tianguis-service/tianguis-service';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: Http) {
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
@@ -71,7 +73,8 @@ export function createTranslateLoader(http: Http) {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    TianguisServiceProvider
   ]
 })
 export class AppModule {}
