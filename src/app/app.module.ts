@@ -32,7 +32,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { TianguisServiceProvider } from '../providers/tianguis-service/tianguis-service';
 import { ListaDatabasePage} from '../pages/lista-database/lista-database';
 import { ImageLoaderPage} from  '../pages/image-loader/image-loader';
-import { ImageLoaderConfig } from 'ionic-image-loader';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
 //import { IonicImageLoader } from 'ionic-image-loader';
 
@@ -67,7 +66,6 @@ export function createTranslateLoader(http: Http) {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     IonicImageLoader.forRoot(),
-    ImageLoaderConfig,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
