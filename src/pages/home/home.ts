@@ -17,8 +17,8 @@ import {TranslateService} from '@ngx-translate/core';
 export class HomePage {
 
   langs = ['en', 'es'];
-   db: any; // LokiJS database 
-   robots: any;
+  //db: any; // LokiJS database 
+  //robots: any;
 
 
 
@@ -29,12 +29,12 @@ export class HomePage {
 
              ) {
 
-             this.db = new loki('robotsOnTV'); 
+             /*this.db = new loki('robotsOnTV'); 
              this.robots = this.db.addCollection('robots');
 
              this.robots.insert({ name: 'Bender', tvShow: 'Futurama' }); 
              this.robots.insert({ name: 'Rosie', tvShow: 'The Jetsons' }); 
-             this.robots.insert({ name: 'K1', tvShow: 'Dr. Who' });
+             this.robots.insert({ name: 'K1', tvShow: 'Dr. Who' });*/
 
   }
 
