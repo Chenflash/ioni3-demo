@@ -12,7 +12,12 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import {AboutPage} from "../pages/about/about";
+import { LoginPage} from '../pages/login/login';
+import { WebViewPage } from '../pages/web-view/web-view';
+import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
+
 import {ChartsPage} from "../pages/charts/charts"
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationTracker } from '../providers/location-tracker/location-tracker';
@@ -21,6 +26,8 @@ import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { ListaDatabasePage} from '../pages/lista-database/lista-database'
 import { ImageLoaderPage} from  '../pages/image-loader/image-loader'
 import { IonicStorageModule } from '@ionic/storage';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
+//import { IonicImageLoader } from 'ionic-image-loader';
 
 
 
@@ -36,9 +43,13 @@ export function createTranslateLoader(http: Http) {
     ListPage,
     DetailPage,
     AboutPage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage,
     ChartsPage,
     ListaDatabasePage,
     ImageLoaderPage
+
   ],
   imports: [
     BrowserModule,
@@ -50,10 +61,10 @@ export function createTranslateLoader(http: Http) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [Http]
+        deps: [Http]  
       }
     })
-
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,9 +73,13 @@ export function createTranslateLoader(http: Http) {
     ListPage,
     DetailPage,
     AboutPage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage,
     ChartsPage,
     ListaDatabasePage,
     ImageLoaderPage
+
   ],
   providers: [
     Storage,
@@ -73,7 +88,8 @@ export function createTranslateLoader(http: Http) {
     Geolocation,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginServiceProvider
   ]
 })
 export class AppModule {}

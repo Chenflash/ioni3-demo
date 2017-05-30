@@ -8,7 +8,12 @@
       "LATITUDE": "LATITUDE",
     "DB_FILL":"Fill database",
     "DB_ERASE":"Erase database"
+    
 
+  },
+  "LOGIN": {
+    "USER":"User",
+    "PASSW":"Password"
 
   }
 }

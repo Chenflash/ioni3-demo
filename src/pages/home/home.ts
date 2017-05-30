@@ -4,6 +4,8 @@ import { LocationTracker } from '../../providers/location-tracker/location-track
 
 import {TranslateService} from '@ngx-translate/core';
 
+ declare var require: any; 
+ var loki = require('lokijs');
 
 
 
@@ -15,6 +17,8 @@ import {TranslateService} from '@ngx-translate/core';
 export class HomePage {
 
   langs = ['en', 'es'];
+  //db: any; // LokiJS database 
+  //robots: any;
 
 
 
@@ -24,6 +28,13 @@ export class HomePage {
               public translate: TranslateService
 
              ) {
+
+             /*this.db = new loki('robotsOnTV'); 
+             this.robots = this.db.addCollection('robots');
+
+             this.robots.insert({ name: 'Bender', tvShow: 'Futurama' }); 
+             this.robots.insert({ name: 'Rosie', tvShow: 'The Jetsons' }); 
+             this.robots.insert({ name: 'K1', tvShow: 'Dr. Who' });*/
 
   }
 
@@ -44,5 +55,9 @@ export class HomePage {
   vaciarBase(){
 
   }
+
+  convert2Array(val) {
+         return Array.from(val);
+     }
 
 }

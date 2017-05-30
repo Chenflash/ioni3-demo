@@ -10,7 +10,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {AboutPage} from "../pages/about/about";
 import {ListaDatabasePage} from "../pages/lista-database/lista-database";
+import {LoginPage} from "../pages/login/login";
 import {TranslateService} from "@ngx-translate/core";
+import { ImageLoaderConfig } from 'ionic-image-loader';
+import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,14 +23,16 @@ import {TranslateService} from "@ngx-translate/core";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  //rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,
                       public statusBar: StatusBar,
                       public splashScreen: SplashScreen,
-                      public  translate: TranslateService       ) {
+                      public  translate: TranslateService,
+                      imageLoaderConfig: ImageLoaderConfig       ) {
 
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -43,14 +48,43 @@ export class MyApp {
     });
 
 
+
+     /*// disable spinners by default, you can add [spinner]="true" to a specific component instance later on to override this
+    imageLoaderConfig.enableSpinner(false);
+    
+    // set the maximum concurrent connections to 10
+    imageLoaderConfig.setConcurrency(10);*/
+
+
+
+
+
+
+    // enable debug mode to get console logs and stuff
+    imageLoaderConfig.enableDebugMode();
+    // set a fallback url to use by default in case an image is not found
+    imageLoaderConfig.setFallbackUrl('assets/fallback.png');
+
+    imageLoaderConfig.setImageReturnType('base64');
+
+    imageLoaderConfig.setSpinnerColor('secondary');
+    imageLoaderConfig.setSpinnerName('bubbles');
+
+
+    imageLoaderConfig.maxCacheSize = 2 * 1024 * 1024; // 2 MB
+    imageLoaderConfig.maxCacheAge = 60 * 1000; // 1 minute
+
+
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List REST Service', component: ListPage },
       { title: 'List DB', component: ListaDatabasePage },
       { title: 'About', component: AboutPage },
+      { title: 'Lista Avatars', component: ListAvatarsPage },
       {title: 'Charts', component:ChartsPage},
       {title: 'ImageLoader', component:ImageLoaderPage}
+      
     ];
 
 
