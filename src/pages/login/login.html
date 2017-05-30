@@ -1,0 +1,47 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--link href="lib/ionic/css/ionic.css" rel="stylesheet"-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>LOGIN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="login" (ngSubmit)="loginForm()">
+    <ion-item>
+  	  <ion-label stacked class="lbls">{{ 'LOGIN.USER' | translate}}</ion-label>
+  	  <ion-input type="text" formControlName="user"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked class="lbls">{{ 'LOGIN.PASSW' | translate}}</ion-label>
+  	  <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <button ion-button block type="submit" [disabled]="!login.valid">Submit</button>
+
+  </form>
+
+   <button ion-button small (click)="launch('https://www.thepolyglotdeveloper.com')">Launch URL</button>
+
+   <!--img class="imgmg" src="assets/img/icono_facebook.png"-->
+
+
+
+   <img-loader src="http://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png"></img-loader>
+
+
+
+
+
+</ion-content>

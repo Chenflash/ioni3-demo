@@ -25,4 +25,11 @@
   <button ion-button full primary (click)="stop()">{{ 'HOME.TRACK_STOP' |translate}}</button>
   <button ion-button full primary (click)="llenarBase()">{{'HOME.DB_FILL' | translate}} </button>
   <button ion-button full primary (click)="vaciarBase()">{{'HOME.DB_ERASE'| translate}} </button>
+
+  <!-- list all database elements --> 
+  <ion-card *ngFor="let robot of convert2Array(robots.data)"> 
+    <ion-card-header> {{robot.name}} </ion-card-header> 
+    <ion-card-content> {{robot.tvShow}} </ion-card-content> 
+  </ion-card>
+
 </ion-content>

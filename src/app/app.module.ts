@@ -11,6 +11,9 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import {AboutPage} from "../pages/about/about";
+import { LoginPage} from '../pages/login/login';
+import { WebViewPage } from '../pages/web-view/web-view';
+import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +24,8 @@ import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 
 
 import { IonicStorageModule } from '@ionic/storage';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 
 export function createTranslateLoader(http: Http) {
@@ -34,21 +39,26 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicImageLoader.forRoot(),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [Http]
+        deps: [Http]  
       }
     })
-
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +66,10 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage
   ],
   providers: [
     Storage,
@@ -65,7 +78,8 @@ export function createTranslateLoader(http: Http) {
     Geolocation,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginServiceProvider
   ]
 })
 export class AppModule {}
