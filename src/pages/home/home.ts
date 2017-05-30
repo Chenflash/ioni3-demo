@@ -4,6 +4,9 @@ import { LocationTracker } from '../../providers/location-tracker/location-track
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { TranslateService } from '@ngx-translate/core';
 
+ declare var require: any; 
+ var loki = require('lokijs');
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -19,6 +22,15 @@ export class HomePage {
               public translate: TranslateService,
               private camera: Camera,
              ) { }
+  //db: any; // LokiJS database 
+  //robots: any;
+
+             /*this.db = new loki('robotsOnTV'); 
+             this.robots = this.db.addCollection('robots');
+
+             this.robots.insert({ name: 'Bender', tvShow: 'Futurama' }); 
+             this.robots.insert({ name: 'Rosie', tvShow: 'The Jetsons' }); 
+             this.robots.insert({ name: 'K1', tvShow: 'Dr. Who' });*/
 
   start(){
     //this.logger.log.debug("Start Tracking");
@@ -55,6 +67,6 @@ export class HomePage {
     }, (err) => {
     // Handle error
     });
-  }
+     }
 
 }

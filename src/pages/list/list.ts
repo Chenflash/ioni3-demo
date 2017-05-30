@@ -28,7 +28,19 @@ export class ListPage {
       'american-football', 'boat', 'bluetooth', 'build'];
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.loadMenu();
+    console.log('Termna el load')
+    setTimeout(() => {
+      console.log('Async operation has ended');
+
+      refresher.complete();
+    }, 2000);
+  }
+
   loadMenu() {
+    this.personas = null;
     this.menuService.load()
       .then(personas => {
         console.log("Personas en loadMenu:"+personas);
@@ -40,6 +52,7 @@ export class ListPage {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(DetailPage, {
       item: item
+    //  item: item.menu
     });
   }
 }

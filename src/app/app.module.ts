@@ -6,6 +6,7 @@ import { Camera } from '@ionic-native/camera';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +16,11 @@ import { DetailPage } from '../pages/detail/detail';
 import { AboutPage } from "../pages/about/about";
 import { MapPage }  from '../pages/map/map';
 import { WebServicePage } from '../pages/web-service/web-service';
+import { LoginPage} from '../pages/login/login';
+import { WebViewPage } from '../pages/web-view/web-view';
+import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
+
+import {ChartsPage} from "../pages/charts/charts"
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +30,13 @@ import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { TianguisServiceProvider } from '../providers/tianguis-service/tianguis-service';
+import { ListaDatabasePage} from '../pages/lista-database/lista-database';
+import { ImageLoaderPage} from  '../pages/image-loader/image-loader';
+import { ImageLoaderConfig } from 'ionic-image-loader';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
+//import { IonicImageLoader } from 'ionic-image-loader';
+
+
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -38,7 +51,14 @@ export function createTranslateLoader(http: Http) {
     DetailPage,
     AboutPage,
     MapPage,
-    WebServicePage
+    WebServicePage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage,
+    ChartsPage,
+    ListaDatabasePage,
+    ImageLoaderPage
+
   ],
   imports: [
     BrowserModule,
@@ -46,14 +66,16 @@ export function createTranslateLoader(http: Http) {
     JsonpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    IonicImageLoader.forRoot(),
+    ImageLoaderConfig,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [Http]
+        deps: [Http]  
       }
     })
-
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +86,14 @@ export function createTranslateLoader(http: Http) {
     DetailPage,
     AboutPage,
     MapPage,
-    WebServicePage
+    WebServicePage,
+    LoginPage,
+    WebViewPage,
+    ListAvatarsPage,
+    ChartsPage,
+    ListaDatabasePage,
+    ImageLoaderPage
+
   ],
   providers: [
     Storage,
@@ -76,6 +105,8 @@ export function createTranslateLoader(http: Http) {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     TianguisServiceProvider,
-    GoogleMaps  ]
+    GoogleMaps,
+    LoginServiceProvider
+  ]
 })
 export class AppModule {}

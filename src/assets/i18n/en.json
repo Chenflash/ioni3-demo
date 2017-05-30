@@ -9,5 +9,9 @@
     "DB_FILL":"Fill database",
     "DB_ERASE":"Erase database",
     "TAKE_PHOTO": "Take photo"
+  },
+  "LOGIN": {
+    "USER":"User",
+    "PASSW":"Password"
   }
 }

@@ -26,4 +26,10 @@
   <button ion-button full primary (click)="takePhoto()">{{'HOME.TAKE_PHOTO'| translate}} </button>
 
   <img [src]="base64Image" *ngIf="base64Image" />
+
+  <!-- list all database elements --> 
+  <!--ion-card *ngFor="let robot of convert2Array(robots.data)"> 
+    <ion-card-header> {{robot.name}} </ion-card-header> 
+    <ion-card-content> {{robot.tvShow}} </ion-card-content> 
+  </ion-card-->
 </ion-content>
