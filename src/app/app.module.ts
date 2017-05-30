@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule,Http   } from '@angular/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 
 import { MyApp } from './app.component';
@@ -18,8 +19,7 @@ import { LocationTracker } from '../providers/location-tracker/location-tracker'
 import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { ListaDatabasePage} from '../pages/lista-database/lista-database'
-
-
+import { ImageLoaderPage} from  '../pages/image-loader/image-loader'
 import { IonicStorageModule } from '@ionic/storage';
 
 
@@ -37,13 +37,15 @@ export function createTranslateLoader(http: Http) {
     DetailPage,
     AboutPage,
     ChartsPage,
-    ListaDatabasePage
+    ListaDatabasePage,
+    ImageLoaderPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    IonicImageLoader.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -61,7 +63,8 @@ export function createTranslateLoader(http: Http) {
     DetailPage,
     AboutPage,
     ChartsPage,
-    ListaDatabasePage
+    ListaDatabasePage,
+    ImageLoaderPage
   ],
   providers: [
     Storage,

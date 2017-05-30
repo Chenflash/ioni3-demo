@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ChartsPage} from '../pages/charts/charts'
-
+import {ImageLoaderPage} from '../pages/image-loader/image-loader'
 
 
 import { HomePage } from '../pages/home/home';
@@ -49,7 +49,8 @@ export class MyApp {
       { title: 'List REST Service', component: ListPage },
       { title: 'List DB', component: ListaDatabasePage },
       { title: 'About', component: AboutPage },
-      {title: 'Charts', component:ChartsPage}
+      {title: 'Charts', component:ChartsPage},
+      {title: 'ImageLoader', component:ImageLoaderPage}
     ];
 
 
