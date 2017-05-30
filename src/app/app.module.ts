@@ -5,6 +5,7 @@ import { HttpModule, Http, JsonpModule } from '@angular/http';
 import { Camera } from '@ionic-native/camera';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,7 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import { AboutPage } from "../pages/about/about";
-import { ContactPage }  from '../pages/contact/contact';
+import { MapPage }  from '../pages/map/map';
 import { WebServicePage } from '../pages/web-service/web-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +37,7 @@ export function createTranslateLoader(http: Http) {
     ListPage,
     DetailPage,
     AboutPage,
-    ContactPage,
+    MapPage,
     WebServicePage
   ],
   imports: [
@@ -62,7 +63,7 @@ export function createTranslateLoader(http: Http) {
     ListPage,
     DetailPage,
     AboutPage,
-    ContactPage,
+    MapPage,
     WebServicePage
   ],
   providers: [
@@ -74,7 +75,7 @@ export function createTranslateLoader(http: Http) {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    TianguisServiceProvider
-  ]
+    TianguisServiceProvider,
+    GoogleMaps  ]
 })
 export class AppModule {}

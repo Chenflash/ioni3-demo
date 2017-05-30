@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 
 import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import { MapPage } from '../map/map';
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -14,7 +14,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab3Root = MapPage;
 
   constructor() {
   }
