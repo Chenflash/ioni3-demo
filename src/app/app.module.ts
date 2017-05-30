@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule,Http   } from '@angular/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 
 import { MyApp } from './app.component';
@@ -15,17 +16,19 @@ import { LoginPage} from '../pages/login/login';
 import { WebViewPage } from '../pages/web-view/web-view';
 import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
 
+import {ChartsPage} from "../pages/charts/charts"
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationTracker } from '../providers/location-tracker/location-tracker';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
-
-
-
+import { ListaDatabasePage} from '../pages/lista-database/lista-database'
+import { ImageLoaderPage} from  '../pages/image-loader/image-loader'
 import { IonicStorageModule } from '@ionic/storage';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
-import { IonicImageLoader } from 'ionic-image-loader';
+//import { IonicImageLoader } from 'ionic-image-loader';
+
 
 
 export function createTranslateLoader(http: Http) {
@@ -42,15 +45,18 @@ export function createTranslateLoader(http: Http) {
     AboutPage,
     LoginPage,
     WebViewPage,
-    ListAvatarsPage
+    ListAvatarsPage,
+    ChartsPage,
+    ListaDatabasePage,
+    ImageLoaderPage
 
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicImageLoader.forRoot(),
     IonicStorageModule.forRoot(),
+    IonicImageLoader.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -69,7 +75,11 @@ export function createTranslateLoader(http: Http) {
     AboutPage,
     LoginPage,
     WebViewPage,
-    ListAvatarsPage
+    ListAvatarsPage,
+    ChartsPage,
+    ListaDatabasePage,
+    ImageLoaderPage
+
   ],
   providers: [
     Storage,

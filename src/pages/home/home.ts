@@ -20,7 +20,7 @@ export class HomePage {
    db: any; // LokiJS database 
    robots: any;
 
- 
+
 
 
   constructor(public navCtrl: NavController,
