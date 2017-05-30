@@ -6,13 +6,41 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>listaDatabase</ion-title>
-  </ion-navbar>
+  <ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>  {{'DB.TITLE'| translate}} </ion-title>
+    </ion-navbar>
 
 </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>comida</ion-label>
+          <ion-input clearInput [(ngModel)]="nombreComida">
+
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Precio </ion-label>
+          <ion-input type="text" [(ngModel)]="precioComida">
+          </ion-input> </ion-item> </ion-list> </ion-card-content>
+    <ion-card-content>
+      <button (click)="addDocument()">Add</button>
+      <button (click)="saveAll()">Save All</button>
+      <button (click)="importAll()">Import All</button>
+    </ion-card-content>
+  </ion-card>
 
 
-<ion-content padding>
+    <ion-card *ngFor="let robot of convert2Array(listado.data)">
 
-</ion-content>
+      <ion-card-header> {{robot.name}} </ion-card-header>
+      <ion-card-content> {{robot.tvShow}}
+        <button (click)="deleteDocument($event, robot)">Delete</button>
+      </ion-card-content>
+    </ion-card>
+

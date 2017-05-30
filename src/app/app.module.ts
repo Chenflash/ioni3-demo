@@ -11,16 +11,17 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import {AboutPage} from "../pages/about/about";
-
+import {ChartsPage} from "../pages/charts/charts"
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationTracker } from '../providers/location-tracker/location-tracker';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
-
+import { ListaDatabasePage} from '../pages/lista-database/lista-database'
 
 
 import { IonicStorageModule } from '@ionic/storage';
+
 
 
 export function createTranslateLoader(http: Http) {
@@ -34,7 +35,9 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    ChartsPage,
+    ListaDatabasePage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,9 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     ListPage,
     DetailPage,
-    AboutPage
+    AboutPage,
+    ChartsPage,
+    ListaDatabasePage
   ],
   providers: [
     Storage,

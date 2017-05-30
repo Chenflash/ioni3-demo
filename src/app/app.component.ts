@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import {ChartsPage} from '../pages/charts/charts'
 
 
 
@@ -48,7 +48,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List REST Service', component: ListPage },
       { title: 'List DB', component: ListaDatabasePage },
-      { title: 'About', component: AboutPage }
+      { title: 'About', component: AboutPage },
+      {title: 'Charts', component:ChartsPage}
     ];
 
 

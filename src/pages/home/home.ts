@@ -16,7 +16,7 @@ export class HomePage {
 
   langs = ['en', 'es'];
 
- 
+
 
 
   constructor(public navCtrl: NavController,
