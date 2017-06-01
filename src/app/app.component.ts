@@ -17,6 +17,9 @@ import {LoginPage} from "../pages/login/login";
 import { ImageLoaderConfig } from 'ionic-image-loader';
 import { ListAvatarsPage } from '../pages/list-avatars/list-avatars';
 
+var loki = require('lokijs');
+var localforage = require('localforage');
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -29,12 +32,20 @@ export class MyApp {
   //rootPage: any = HomePage;
   rootPage: any = LoginPage;
 
+  db: any;
+  collection: any;
+  profileImage: any;
+
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               public  translate: TranslateService ) {
+
+
+    this.db = new loki('cameraDB');
+    var self = this;
 
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -44,6 +55,19 @@ export class MyApp {
       translate.setDefaultLang('es');
       // the lang to use, if the lang isn't available, it will use the current loader to get them
       translate.use('es');
+
+      this.db = new loki('cameraDB');
+      localforage.getItem('storeKey')
+      .then(function(value) {
+      self.db.loadJSON(value);
+      self.collection = self.db.getCollection('images');
+      if (self.collection != null) {
+        self.profileImage = self.collection.get(1).photo;
+      }
+      })
+      .catch(function(err) {
+      console.log('App. Error importing database: ' + err); });
+
     });
 
 

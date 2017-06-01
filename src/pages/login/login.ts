@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 //import {TranslateService} from '@ngx-translate/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {LoginServiceProvider} from '../../providers/login-service/login-service'
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { WebViewPage } from '../web-view/web-view';
 //import { InAppBrowser } from '@ionic-native';
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -62,7 +62,7 @@ export class LoginPage {
         this.hideLoading();
         if(this.dataa.usuarioId > 0){
           //this.navCtrl.push(HomePage);
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(TabsPage);
         }
 
       });

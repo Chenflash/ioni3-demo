@@ -39,7 +39,7 @@
     <ion-card *ngFor="let robot of convert2Array(listado.data)">
 
       <ion-card-header> {{robot.name}} </ion-card-header>
-      <ion-card-content> {{robot.tvShow}}
+      <ion-card-content> {{robot.precio}}
         <button (click)="deleteDocument($event, robot)">Delete</button>
       </ion-card-content>
     </ion-card>

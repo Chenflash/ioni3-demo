@@ -6,6 +6,17 @@
   </ion-header>
 
   <ion-content>
+
+    <img [src]="profileImage" *ngIf="profileImage" />
+
+    <ion-thumbnail item-left>
+      <img src="http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-5.jpg">
+    </ion-thumbnail>
+    <h2>Diego García</h2>
+
+    <ion-icon name="help-circle"></ion-icon>
+    <ion-icon name="settings"></ion-icon>
+
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
