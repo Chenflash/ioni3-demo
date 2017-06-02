@@ -7,6 +7,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { IonicImageLoader } from 'ionic-image-loader';
+import { Contacts } from '@ionic-native/contacts';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -104,7 +105,8 @@ export function createTranslateLoader(http: Http) {
     Camera,
     TianguisServiceProvider,
     GoogleMaps,
-    LoginServiceProvider
+    LoginServiceProvider,
+    Contacts
   ]
 })
 export class AppModule {}
